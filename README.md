@@ -1,3 +1,0 @@
-# PruebaCole
-
-Es una prueba
