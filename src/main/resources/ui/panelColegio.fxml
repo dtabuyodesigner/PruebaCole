@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="442.0" prefWidth="676.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="402.0" prefWidth="671.0" style="-fx-background-color: #ffaaff;" VBox.vgrow="ALWAYS">
+      <children>
+            <ListView fx:id="lvListado" layoutX="426.0" layoutY="60.0" onMouseClicked="#seleccionardelalista" prefHeight="288.0" prefWidth="200.0" />
+            <Label fx:id="lbEstado" layoutX="8.0" layoutY="416.0" prefHeight="16.0" prefWidth="640.0" text="Info: " />
+            <Label layoutX="507.0" layoutY="38.0" text="Listado" />
+            <TextField fx:id="tfCodalu" layoutX="93.0" layoutY="44.0" />
+            <TextField fx:id="tfNombre" layoutX="93.0" layoutY="82.0" />
+            <TextField fx:id="tfApellido1" layoutX="93.0" layoutY="118.0" />
+            <TextField fx:id="tfApellido2" layoutX="93.0" layoutY="154.0" />
+            <TextField fx:id="tfObservaciones" layoutX="130.0" layoutY="227.0" prefHeight="45.0" prefWidth="171.0" />
+            <ComboBox fx:id="cbCodcurso" layoutX="94.0" layoutY="195.0" prefHeight="26.0" prefWidth="171.0" />
+            <Label layoutX="20.0" layoutY="49.0" text="Cod. Alu" />
+            <Label layoutX="20.0" layoutY="87.0" text="Nombre" />
+            <Label layoutX="20.0" layoutY="123.0" text="Apellido 1" />
+            <Label layoutX="20.0" layoutY="159.0" text="Apellido 2" />
+            <Label layoutX="20.0" layoutY="200.0" text="Curso" />
+            <Label layoutX="20.0" layoutY="232.0" text="Observaciones" />
+            <Button fx:id="btCrear" layoutX="40.0" layoutY="298.0" mnemonicParsing="false" onAction="#crearAlumno" text="Crear" />
+            <Button fx:id="btModificar" layoutX="109.0" layoutY="298.0" mnemonicParsing="false" onAction="#modificarAlumno" text="Modificar" />
+            <Button fx:id="btEliminar" layoutX="193.0" layoutY="298.0" mnemonicParsing="false" onAction="#eliminarAlumno" text="Eliminar" />
+            <Button fx:id="btGuardar" layoutX="272.0" layoutY="298.0" mnemonicParsing="false" onAction="#guardarAlumno" text="Guardar" />
+            <Button fx:id="btncancelar" layoutX="83.0" layoutY="343.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+            <Button fx:id="btConfirmar" layoutX="204.0" layoutY="343.0" mnemonicParsing="false" onAction="#guardaModifi" text="Confirmar" />
+            <MenuBar prefHeight="29.0" prefWidth="676.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem mnemonicParsing="false" text="Exportar" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                    <MenuItem mnemonicParsing="false" text="Salir" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Button fx:id="btBuscar" layoutX="142.0" layoutY="390.0" mnemonicParsing="false" onAction="#buscar" text="Buscar" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>

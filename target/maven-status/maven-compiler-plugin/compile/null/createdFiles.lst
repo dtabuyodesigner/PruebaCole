@@ -1,0 +1,13 @@
+util/R.class
+basesDAO/LoginDAO.class
+general/AppLogin.class
+util/AlertUtils.class
+controlers/ControlPanelColegio.class
+general/App.class
+controlers/ControlPanelLogin.class
+controlers/PanelControlDescargas.class
+controlers/ControlPanelColegio$1.class
+basesDAO/DAOmysql.class
+controlers/ControlPanelSeleccion.class
+domain/Alumno.class
+domain/Login.class
