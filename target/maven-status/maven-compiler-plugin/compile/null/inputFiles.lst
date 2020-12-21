@@ -1,12 +1,12 @@
-/home/dani/IdeaProjects/colegioDani (copia)/src/main/java/controlers/ControlPanelLogin.java
-/home/dani/IdeaProjects/colegioDani (copia)/src/main/java/domain/Alumno.java
-/home/dani/IdeaProjects/colegioDani (copia)/src/main/java/general/AppLogin.java
-/home/dani/IdeaProjects/colegioDani (copia)/src/main/java/controlers/ControlPanelColegio.java
-/home/dani/IdeaProjects/colegioDani (copia)/src/main/java/basesDAO/LoginDAO.java
-/home/dani/IdeaProjects/colegioDani (copia)/src/main/java/controlers/ControlPanelSeleccion.java
-/home/dani/IdeaProjects/colegioDani (copia)/src/main/java/domain/Login.java
-/home/dani/IdeaProjects/colegioDani (copia)/src/main/java/util/AlertUtils.java
-/home/dani/IdeaProjects/colegioDani (copia)/src/main/java/util/R.java
-/home/dani/IdeaProjects/colegioDani (copia)/src/main/java/general/App.java
-/home/dani/IdeaProjects/colegioDani (copia)/src/main/java/basesDAO/DAOmysql.java
-/home/dani/IdeaProjects/colegioDani (copia)/src/main/java/controlers/PanelControlDescargas.java
+/home/dani/IdeaProjects/AAacessodatos/src/main/java/general/App.java
+/home/dani/IdeaProjects/AAacessodatos/src/main/java/basesDAO/DAOmysql.java
+/home/dani/IdeaProjects/AAacessodatos/src/main/java/general/AppLogin.java
+/home/dani/IdeaProjects/AAacessodatos/src/main/java/controlers/ControlPanelColegio.java
+/home/dani/IdeaProjects/AAacessodatos/src/main/java/util/AlertUtils.java
+/home/dani/IdeaProjects/AAacessodatos/src/main/java/controlers/ControlPanelLogin.java
+/home/dani/IdeaProjects/AAacessodatos/src/main/java/domain/Login.java
+/home/dani/IdeaProjects/AAacessodatos/src/main/java/basesDAO/LoginDAO.java
+/home/dani/IdeaProjects/AAacessodatos/src/main/java/controlers/PanelControlDescargas.java
+/home/dani/IdeaProjects/AAacessodatos/src/main/java/domain/Alumno.java
+/home/dani/IdeaProjects/AAacessodatos/src/main/java/controlers/ControlPanelSeleccion.java
+/home/dani/IdeaProjects/AAacessodatos/src/main/java/util/R.java

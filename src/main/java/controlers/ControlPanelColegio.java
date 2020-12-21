@@ -190,6 +190,8 @@ public class ControlPanelColegio {
         btCrear.setDisable(modocrear);
         btModificar.setDisable(modocrear);
         btEliminar.setDisable(modocrear);
+        btConfirmar.setDisable(modocrear);
+        btBuscar.setDisable(modocrear);
     }
 
     //Creamos un método para el modomodificar. Desactiva botonesre
