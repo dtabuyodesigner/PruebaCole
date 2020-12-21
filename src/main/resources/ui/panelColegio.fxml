@@ -49,6 +49,7 @@
               </menus>
             </MenuBar>
             <Button fx:id="btBuscar" layoutX="142.0" layoutY="390.0" mnemonicParsing="false" onAction="#buscar" text="Buscar" />
+            <Button fx:id="btVolver" layoutX="507.0" layoutY="377.0" mnemonicParsing="false" onAction="#volver" text="Volver" />
       </children>
     </AnchorPane>
   </children>

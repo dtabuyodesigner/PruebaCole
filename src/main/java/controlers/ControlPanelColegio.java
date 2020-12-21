@@ -6,14 +6,17 @@ import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import util.AlertUtils;
 
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
+import java.util.ResourceBundle;
 
-public class ControlPanelColegio {
+public class ControlPanelColegio implements Initializable {
 
     public TextField tfCodalu;
     public TextField tfNombre;
@@ -54,11 +57,14 @@ public class ControlPanelColegio {
         try {
             listadoalumnos = daOmysql.listaAlumnos();
 
+
         } catch (Exception e) {
             System.out.println("Ha habido un problema al cargar las lista");
         }
 
         lvListado.setItems(FXCollections.observableList(listadoalumnos));
+        String[] cursos = new String[]{"<Selecciona tipo>", "Infantil", "1º", "2º", "3º","4º","5º","6º"};
+        cbCodcurso.setItems(FXCollections.observableArrayList(cursos));
     }
 
     private void cargarAlumno(Alumno alumno) {
@@ -88,6 +94,7 @@ public class ControlPanelColegio {
     public void modificarAlumno(Event event) {
         mostarinfobarra("Modificando un registro", "Modificando un registro", 1000);
         modoModificar();
+
 
 
     }
@@ -137,7 +144,17 @@ public class ControlPanelColegio {
     }
     //Boton CONFIMAR
     @FXML
-    public void guardaModifi(Event event) {
+    public void guardaModifi(Event event) throws Exception {
+        int codAlu = Integer.parseInt(tfCodalu.getText());
+        String nombre = tfNombre.getText();
+        String ap1 = tfApellido1.getText();
+        String ap2 = tfApellido2.getText();
+        String codcurs = cbCodcurso.getSelectionModel().getSelectedItem();
+        String observaciones = tfObservaciones.getText();
+        Alumno alumnonuevo = new Alumno(codAlu,nombre,ap1,ap2,codcurs,observaciones);
+       // System.out.println(alumnoseleccionado.toString());//----------------
+        daOmysql.editaAlumno(alumnonuevo);
+        cargarListado();
 
     }
     //todo //Botón BUSCAR
@@ -145,12 +162,18 @@ public class ControlPanelColegio {
     public void buscar(Event event) throws SQLException {
         modobuscar();
         String ap1 = tfApellido1.getText();
-        String ap2 = tfApellido2.getText();
-        DAOmysql objbuscar = new DAOmysql();
-        objbuscar.buscar(ap1,ap2);
+       // String ap2 = tfApellido2.getText();
+          daOmysql.buscar(ap1);
+          List<Alumno> alumnoscoincide = daOmysql.buscar(ap1);
+          lvListado.getItems().clear();
+          lvListado.setItems(FXCollections.observableArrayList(alumnoscoincide));
 
 
-
+    }
+    @FXML
+    public void volver(Event event){
+        cargarListado();
+        modoCrear(false);
 
     }
     //Este es el botón CONFIRMAR
@@ -190,6 +213,9 @@ public class ControlPanelColegio {
         btCrear.setDisable(modocrear);
         btModificar.setDisable(modocrear);
         btEliminar.setDisable(modocrear);
+        btConfirmar.setDisable(modocrear);
+        btBuscar.setDisable(modocrear);
+        btGuardar.setDisable(false);
     }
 
     //Creamos un método para el modomodificar. Desactiva botonesre
@@ -209,7 +235,7 @@ public class ControlPanelColegio {
     }
     //todo
     public void modobuscar(){
-        tfNombre.setDisable(true);
+        tfNombre.setDisable(false);
         tfCodalu.setDisable(true);
         btCrear.setDisable(true);
         btEliminar.setDisable(true);
@@ -282,6 +308,11 @@ public class ControlPanelColegio {
         tfObservaciones.clear();
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+    daOmysql= new DAOmysql();
+    cargarListado();
+    }
 }
 
 

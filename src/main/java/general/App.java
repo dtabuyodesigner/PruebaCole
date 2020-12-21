@@ -23,9 +23,8 @@ public class App extends Application {
         ControlPanelColegio controlador = new ControlPanelColegio();
         loader.setController(controlador);
         VBox vbox = loader.load();
-        //controlador.cargarLista();
-        //controlador.cargarListado();
-
+        controlador.cargarLista();
+        controlador.cargarListado();
         Scene scene = new Scene(vbox);
         stage.setScene(scene);
         stage.show();

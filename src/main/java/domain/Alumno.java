@@ -10,6 +10,10 @@ public class Alumno {
     private String codCurso;
     private String observaciones;
 
+    public Alumno(){
+
+    }
+
     // Constructor de alumno
     public Alumno(String nombre, String apellido1, String apellido2, String codCurso, String observaciones) {
         this.nombre = nombre;

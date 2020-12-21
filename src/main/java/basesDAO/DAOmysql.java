@@ -57,8 +57,8 @@ public class DAOmysql {
     }
     //Método para modificar alumnos. todo 20-12-20
 
-    public void editaAlumno(Alumno alumnoAntiguo, Alumno alumnoNuevo) throws Exception {
-        String edita = "UPDATE Alumnos SET nombre = ?, apellido1 = ?, apellido2 = ?, codCurso = ?, observaciones = ? WHERE id = ?";
+    public void editaAlumno( Alumno alumnoNuevo) throws Exception {
+        String edita = "UPDATE Alumnos SET nombre = ?, apellido1 = ?, apellido2 = ?,codCurso = ?, observaciones = ? WHERE codAlu = ?";
 
         PreparedStatement sentencia = connectionMysql.prepareStatement(edita);
         sentencia.setString(1, alumnoNuevo.getNombre());
@@ -66,9 +66,10 @@ public class DAOmysql {
         sentencia.setString(3, alumnoNuevo.getApellido2());
         sentencia.setString(4, alumnoNuevo.getCodCurso());
         sentencia.setString(5, alumnoNuevo.getObservaciones());
-        sentencia.setInt(6, alumnoAntiguo.getCodAlum());
+        sentencia.setInt(6, alumnoNuevo.getCodAlum());
+        System.out.println(alumnoNuevo.toString());
         sentencia.executeUpdate();
-        sentencia.close();
+
 
     }
 
@@ -99,29 +100,26 @@ public class DAOmysql {
     }
 
     //todo Método para ver si existe el alumno en la base de datos
-    public List<Alumno> buscar(String ap1, String ap2) throws SQLException {
+    public  List<Alumno> buscar(String ap1) throws SQLException {
         ArrayList<Alumno> alumnosencon = new ArrayList();
-        String sql = "SELECT * FROM Alumnos WHERE apellido1 = ? AND apellido2 = ?";
+        String sql = "SELECT * FROM Alumnos WHERE apellido1 = ?";
         PreparedStatement sentencia = connectionMysql.prepareStatement(sql);
-        sentencia.setString(1, ap1);
-        sentencia.setString(2, ap2);
+         sentencia.setString(1, ap1);
+       // sentencia.setString(2, ap2);
         ResultSet resultado = sentencia.executeQuery();
+
         while (resultado.next()) {
-            Alumno alumno = new Alumno(
-                    resultado.getInt("codAlu"),
-                    resultado.getString("nombre"),
-                    resultado.getString("apellido1"),
-                    resultado.getString("apellido2"),
-                    resultado.getString("codCurso"),
-                    resultado.getString("observaciones")
-            );
+            Alumno alumno = new Alumno();
+                alumno.setNombre(resultado.getString(2));
+                alumno.setApellido1(resultado.getString(3));
+                alumno.setApellido2(resultado.getString(4));
+                alumno.setCodCurso(resultado.getString(5));
+                alumno.setObservaciones(resultado.getString(6));
 
             alumnosencon.add(alumno);
         }
 
-        sentencia.close();
-        resultado.close();
 
-        return alumnosencon;
+                return alumnosencon;
     }
 }
