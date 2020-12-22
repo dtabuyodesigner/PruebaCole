@@ -25,7 +25,7 @@ public class LoginDAO {
         connectionMysql.close();
     }
 
-
+    //Método para hacer registro
     public boolean registrar(String usuario, String pass) throws Exception {
 
         String query = "INSERT INTO users (usuario, pass) VALUES (?, ?)";
@@ -46,7 +46,7 @@ public class LoginDAO {
         return aviso;
     }
 
-
+    //Método para verificar el  registro
     public boolean verificarLogin(String usuario, String pass) throws Exception {
 
         String query = "SELECT usuario, pass FROM users WHERE usuario = ? AND pass = ?";
@@ -58,8 +58,8 @@ public class LoginDAO {
         rs = sentencia.executeQuery();
 
         boolean datos = false;
-        while (rs.next()){
-            datos= true;
+        while (rs.next()) {
+            datos = true;
         }
 
         return datos;

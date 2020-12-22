@@ -10,6 +10,11 @@ public class Alumno {
     private String codCurso;
     private String observaciones;
 
+    //Constructor vacio
+    public Alumno() {
+
+    }
+
     // Constructor de alumno
     public Alumno(String nombre, String apellido1, String apellido2, String codCurso, String observaciones) {
         this.nombre = nombre;
@@ -18,14 +23,15 @@ public class Alumno {
         this.codCurso = codCurso;
         this.observaciones = observaciones;
     }
+
     //Constructor 2 del alumno
-    public Alumno(int codAlum,String nombre, String apellido1, String getApellido2, String codCurso, String observaciones) {
+    public Alumno(int codAlum, String nombre, String apellido1, String getApellido2, String codCurso, String observaciones) {
         this.nombre = nombre;
         this.apellido1 = apellido1;
         this.apellido2 = getApellido2;
         this.codCurso = codCurso;
         this.observaciones = observaciones;
-        this.codAlum= codAlum;
+        this.codAlum = codAlum;
     }
 
     public int getCodAlum() {
@@ -74,7 +80,7 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return  nombre +  " "+apellido1 + " " + apellido2 + " "+codCurso;
+        return nombre + " " + apellido1 + " " + apellido2 + " " + codCurso;
     }
 
 

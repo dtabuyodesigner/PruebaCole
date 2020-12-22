@@ -16,9 +16,9 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="402.0" prefWidth="671.0" style="-fx-background-color: #ffaaff;" VBox.vgrow="ALWAYS">
       <children>
-            <ListView fx:id="lvListado" layoutX="426.0" layoutY="60.0" onMouseClicked="#seleccionardelalista" prefHeight="288.0" prefWidth="200.0" />
+            <ListView fx:id="lvListado" layoutX="426.0" layoutY="60.0" onMouseClicked="#seleccionardelalista" prefHeight="288.0" prefWidth="214.0" />
             <Label fx:id="lbEstado" layoutX="8.0" layoutY="416.0" prefHeight="16.0" prefWidth="640.0" text="Info: " />
-            <Label layoutX="507.0" layoutY="38.0" text="Listado" />
+            <Label layoutX="409.0" layoutY="38.0" text="CEIP NUESTRA SEÑORA DEL ROSARIO" />
             <TextField fx:id="tfCodalu" layoutX="93.0" layoutY="44.0" />
             <TextField fx:id="tfNombre" layoutX="93.0" layoutY="82.0" />
             <TextField fx:id="tfApellido1" layoutX="93.0" layoutY="118.0" />
@@ -31,11 +31,11 @@
             <Label layoutX="20.0" layoutY="159.0" text="Apellido 2" />
             <Label layoutX="20.0" layoutY="200.0" text="Curso" />
             <Label layoutX="20.0" layoutY="232.0" text="Observaciones" />
-            <Button fx:id="btCrear" layoutX="40.0" layoutY="298.0" mnemonicParsing="false" onAction="#crearAlumno" text="Crear" />
-            <Button fx:id="btModificar" layoutX="109.0" layoutY="298.0" mnemonicParsing="false" onAction="#modificarAlumno" text="Modificar" />
-            <Button fx:id="btEliminar" layoutX="193.0" layoutY="298.0" mnemonicParsing="false" onAction="#eliminarAlumno" text="Eliminar" />
-            <Button fx:id="btGuardar" layoutX="272.0" layoutY="298.0" mnemonicParsing="false" onAction="#guardarAlumno" text="Guardar" />
-            <Button fx:id="btncancelar" layoutX="83.0" layoutY="343.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+            <Button fx:id="btCrear" layoutX="91.0" layoutY="298.0" mnemonicParsing="false" onAction="#crearAlumno" text="Crear" />
+            <Button fx:id="btModificar" layoutX="102.0" layoutY="343.0" mnemonicParsing="false" onAction="#modificarAlumno" text="Modificar" />
+            <Button fx:id="btEliminar" layoutX="239.0" layoutY="298.0" mnemonicParsing="false" onAction="#eliminarAlumno" text="Eliminar" />
+            <Button fx:id="btGuardar" layoutX="156.0" layoutY="298.0" mnemonicParsing="false" onAction="#guardarAlumno" text="Guardar" />
+            <Button fx:id="btncancelar" layoutX="154.0" layoutY="385.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
             <Button fx:id="btConfirmar" layoutX="204.0" layoutY="343.0" mnemonicParsing="false" onAction="#guardaModifi" text="Confirmar" />
             <MenuBar prefHeight="29.0" prefWidth="676.0">
               <menus>
@@ -43,12 +43,14 @@
                   <items>
                         <MenuItem mnemonicParsing="false" text="Exportar" />
                         <SeparatorMenuItem mnemonicParsing="false" />
-                    <MenuItem mnemonicParsing="false" text="Salir" />
+                    <MenuItem fx:id="mnSalir" mnemonicParsing="false" onAction="#salirPanelCole" text="Salir" />
                   </items>
                 </Menu>
               </menus>
             </MenuBar>
-            <Button fx:id="btBuscar" layoutX="142.0" layoutY="390.0" mnemonicParsing="false" onAction="#buscar" text="Buscar" />
+            <Button fx:id="btBuscar" layoutX="426.0" layoutY="359.0" mnemonicParsing="false" onAction="#buscar" text="Buscar" />
+            <Button fx:id="btVolver" layoutX="580.0" layoutY="358.0" mnemonicParsing="false" onAction="#volver" text="Volver" />
+            <Button fx:id="btBorrar" layoutX="503.0" layoutY="398.0" mnemonicParsing="false" onAction="#borrarTodo" text="Borrar" />
       </children>
     </AnchorPane>
   </children>
