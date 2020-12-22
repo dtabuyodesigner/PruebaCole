@@ -74,13 +74,13 @@ public class ControlPanelLogin {
         }
     }
 
-
+    // Cierra la pantalla al pulsar en salir
     @FXML
     public void salirLogin(Event event) throws SQLException {
         Platform.exit();
     }
 
-
+    // Avisa si el registro ha ido bien o mal
     public void avisoRegistro(boolean result) {
         if (result) {
             lbLogin.setText("Usuario registrado con exito");
